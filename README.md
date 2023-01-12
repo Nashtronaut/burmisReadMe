@@ -6,30 +6,49 @@ Within this readme is some tips and set up required to be productive with Burmis
 
 ## Contents
 
-- [Accounts](#accounts)
-  - [Gmail/Gchat/Gmeet](#gmailgchatgmeet)
-  - [1Password](#1password)
-  - [Toggl](#toggl)
-- [Payment Information](#payment-information)
-  - [GST Number](#gst-number)
-  - [Billing](#billing)
-- [Code Standards](#code-standards)
-  - [End of File](#end-of-file)
-  - [End of Line](#end-of-line)
-  - [Code Golf](#dont-play-code-golf)
-  - [Prettier/Code Linting](#prettiercode-linting)
-  - [Workflow](#workflow)
-  - [Tests](#tests)
-  - [Issues](#issues)
-  - [Branching](#branching)
-  - [Pull Requests](#pull-requests)
-  - [Project Board](#project-board)
+- [Welcome to Burmis Studios!](#welcome-to-burmis-studios)
+  - [Contents](#contents)
+  - [Accounts](#accounts)
+    - [Github 2FA / Commit Signing](#github-2fa--commit-signing)
+    - [Gmail/Gchat/Gmeet](#gmailgchatgmeet)
+    - [1Password](#1password)
+    - [Toggl](#toggl)
+  - [Extras](#extras)
+    - [Github Notifier](#github-notifier)
+    - [Github Mobile](#github-mobile)
+  - [Payment Information](#payment-information)
+    - [GST Number](#gst-number)
+    - [Billing](#billing)
+  - [Code Standards](#code-standards)
+    - [End of File](#end-of-file)
+    - [End of Line](#end-of-line)
+    - [Don't Play Code Golf](#dont-play-code-golf)
+    - [Prettier/Code Linting](#prettiercode-linting)
+    - [Workflow](#workflow)
+    - [Tests](#tests)
+    - [Issues](#issues)
+    - [Branching](#branching)
+    - [Pull Requests](#pull-requests)
+    - [Project Board](#project-board)
 
 ---
 
 ## Accounts
 
-Burmis studios uses software solutions for most business tracking and access. Below is some information to help you get aquintated.  
+Burmis studios uses software solutions for most business tracking and access. Below is some information to help you get aquintated.
+
+### Github 2FA / Commit Signing
+
+> Burmis Studios required two-factor authentication on our developer's Github account as well as commit signing via GPG key. This is for extra security in our organizations repositories. 2FA should be set up regardless of Burmis, as it is in your best interest to protect your Github account. GPG signing keys help us keep the repo's secure by authenticating that commits actually came from who they should. If someone did get access to your account, it would be very difficult for them to commit malicious code to our code base.  
+
+2FA is a quick and easy process that I'm sure most are familiar with already. Below are some documents for setting it up with your Github account.
+
+- [Two-Factor Authentication](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification)
+ 
+As GPG keys are a fairly involved process to set up, I will again refer to Githubs official documentation. You can configure git on your computer to automatically request a signing / password input so that you never forget. Below are some links to documentation that should help you get this set up!
+
+- [Commit Verification / Key Set-up](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification)
+- [Using Key Automatically](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key)
 
 ### Gmail/Gchat/Gmeet
 ---
@@ -100,6 +119,10 @@ Once your account has been set up, you can begin tracking invoicable time as fol
 - Select whether the time is billable or not (Most likely is)
 - Click Done!
 
+It is very important to not miss any description of tasks. If you do not have an explanation of why you logged hours, we have no way of telling the client why we are billing that time.
+
+Make sure you describe your time entries accurately!
+
 ![image](https://user-images.githubusercontent.com/48274410/208812512-af8ddea0-7567-4f36-aa65-50f3a178da72.png)
 
 Your time is now being tracked by the second (Just time, its not as sinister as it sounds). 
@@ -115,6 +138,46 @@ NOTE: Mistakes happen. Sometimes we get up from our PC, forget to pause our time
 This interface is also what you will want to use for invoicing purposes. It will display all of your tracked time in a calendar, which can easily be translated to a formal invoice for billing, as described below. 
 
 ![image](https://user-images.githubusercontent.com/48274410/208812562-395428ab-3013-45c1-8aaa-8e24d060eb13.png)
+
+---
+
+## Extras
+
+Here are some extra little things we use around the office to keep our workflow smooth!
+
+### Github Notifier
+
+> Github Notifier is another handy little browser extension that helps you keep on top of Github Notifications.
+
+Never miss a change request again! Never miss a review request! This add-on will allow your browser to notify you of Github notifications convienently. Once again, make sure to adjust steps to match your browser. 
+
+- Navigate to the browser "Add-ons" or "Extensions"
+- Search for and install Github Notifier
+
+![image](https://user-images.githubusercontent.com/48274410/209077061-33aa077b-4b2b-4944-b620-eda4a06e9ece.png)
+
+Something to consider is that the set up for this add-on is a little more extensive. You will need to create a Github token with notification privelages for public repo's, or a token with repo AND notification for private repositories. This is a fairly involved process but there is plenty of documentation online that I will link to below. Whether it be for this add-on or not, you should get familiar with tokens! They are very useful to know. 
+
+- [Creating a token](https://docs.github.com/en/enterprise-server@3.4/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+
+Here is a screen shot of the add-on initial configuration panel.
+
+![image](https://user-images.githubusercontent.com/48274410/209076818-25c22ad8-d5da-41a5-9d33-b214a0753a1d.png)
+
+NOTE: The Root URL for burmis is https://api.github.com/burmis
+
+---
+
+### Github Mobile
+
+> Github provides a handy little application for mobile devices. This allows you to recieve notifications while on the run! 
+
+- [Android Devices](https://play.google.com/store/apps/details?id=com.github.android)
+- [Apple Devices](https://apps.apple.com/us/app/github/id1477376905)
+
+Don't worry, there is dark mode. 
+
+![image](https://user-images.githubusercontent.com/48274410/209076882-80f718a2-1c3a-4cf4-a284-502560baba0b.png)
 
 ---
 
@@ -293,6 +356,9 @@ This is where the important specification follow, so please follow this process 
 ![image](https://user-images.githubusercontent.com/48274410/208814216-f9917ba6-3eda-4472-b1c1-e45dde8dceb5.png)
 
 - Edit the PR and fill out ALL of the relevant details. Thankfully, there is usually a template. Below is an example...
+
+![image](https://user-images.githubusercontent.com/48274410/209076710-deeb1cac-f120-4b79-9fa2-c2a35e24951e.png)
+
   - NOTE: If you use ```Fixes #issueNumber``` in your PR description your issue will automatically close when your branch is merged.
 - Select a reviewer
 
